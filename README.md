@@ -1,1 +1,1 @@
-# Netflix_Shows_and_Movies_SQL_Analysis
+# <p align="center">Netflix Shows and Movies Project</p>
