@@ -1,7 +1,7 @@
 # <p align="center">Netflix Shows and Movies Project</p>
 # <p align="center">![Pic](https://i.ibb.co/Q81WwRN/92399716.jpg)</p>
 
-**Tools Used:** Microsoft Excel, MySQL, Tableau
+**Tools Used:** Excel, MySQL, Tableau
 
 [Dataset Used](https://www.kaggle.com/datasets/victorsoeiro/netflix-tv-shows-and-movies?select=titles.csv)
 
