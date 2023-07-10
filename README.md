@@ -124,3 +124,46 @@ The first query focused on the average IMDB scores associated with each age cert
 
 When examining the distribution of movies and shows across age certifications, the second query showcases the varying prevalence of different certifications within Netflix's dataset. R emerges as the most prevalent age certification, with 556 titles falling under this category. PG-13 closely follows with 451 titles, reflecting a significant number of movies and shows targeted at mature audiences. The age certification PG accounts for 233 titles, indicating a considerable selection suitable for general audiences. The dataset also includes 124 titles classified as G, which mostly caters to a younger audience. Lastly, the least represented certification is NC-17, with only 16 titles available. These findings highlight the diverse range of age certifications present in Netflix's movies and shows dataset and provide valuable insights into both audience preferences and content distribution. The higher average scores associated with TV-14, TV-MA, and TV-PG certifications suggest that content aligned with these age categories tends to resonate positively with viewers. 
 
+## 4. Which genres are the most common? 
+- Top 10 most common genres for MOVIES
+```mysql
+SELECT genres, 
+COUNT(*) AS title_count
+FROM shows_movies.titles 
+WHERE type = 'Movie'
+GROUP BY genres
+ORDER BY title_count DESC
+LIMIT 10;
+```
+Result:
+
+![Q8](https://i.ibb.co/VWrgd8m/Screen-Shot-2023-07-10-at-12-25-40-PM.png)
+
+- Top 10 most common genres for SHOWS
+```mysql
+SELECT genres, 
+COUNT(*) AS title_count
+FROM shows_movies.titles 
+WHERE type = 'Show'
+GROUP BY genres
+ORDER BY title_count DESC
+LIMIT 10;
+```
+Result: 
+
+![Q9](https://i.ibb.co/P59s4X7/Screen-Shot-2023-07-10-at-12-27-41-PM.png)
+
+- Top 5 most common genres OVERALL
+```mysql
+SELECT t.genres, 
+COUNT(*) AS genre_count
+FROM shows_movies.titles AS t
+WHERE t.type = 'Movie' or t.type = 'Show'
+GROUP BY t.genres
+ORDER BY genre_count DESC
+LIMIT 3;
+```
+Result: 
+
+![Q10](https://i.ibb.co/qMvMBGf/Screen-Shot-2023-07-10-at-12-30-04-PM.png)
+
