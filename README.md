@@ -13,10 +13,9 @@
 
 - **How I Plan On Solving the Problem:** In helping Netflix gather valuable insights from their extensive movies and shows dataset, I will be utilizing SQL and a data visualization tool like Tableau to extract relevant information, and conduct insightful analyses. By leveraging SQL's functions, I can uncover key metrics such as viewer ratings, popularity trends, genre preferences, and viewership patterns. Once the data has been extracted and prepared, I will leverage Tableau to present the findings. This will allow for interactive exploration of the data, enabling stakeholders at Netflix to gain actionable insights through visually appealing charts, graphs, and interactive visualizations. I plan on creating a dynamic dashboard in Tableau that enables users to delve into specific movie genres, viewer demographics, or geographical regions.
 
-### Questions I Wanted To Answer From the Dataset
+## Questions I Wanted To Answer From the Dataset:
 
-**1. Which movies and shows on Netflix ranked in the top 10 and bottom 10 based on their IMDB scores?**
-
+## 1. Which movies and shows on Netflix ranked in the top 10 and bottom 10 based on their IMDB scores?
 - Top 10 Movies
 ```mysql
 SELECT title, 
@@ -77,8 +76,7 @@ Result:
 
 An IMDB score is a widely recognized measure of the overall quality and popularity of a movie or show. The top 10 movies and shows stood out for their exceptional IMDB scores, indicating that they are highly regarded by viewers. These titles have likely garnered significant acclaim and positive reviews, contributing to their high rankings within the Netflix library. Viewers who are seeking quality content would find these selections very appealing. On the other hand, the bottom 10 movies and shows had lower IMDB scores. While these entries may not have resonated as strongly with audiences, it's important to note that many factors influence these rankings such as individual preferences, weak plot, poor acting, and low-quality production. By uncovering the top and bottom performers based on IMDB scores, this project sheds light on the varying levels of audience reception and highlights titles that are likely to be well-received and those that may have room for improvement. These findings can provide valuable insights for viewers seeking highly-rated content and can serve as a basis for further analysis and decision-making for Netflix's audience recommendations. 
 
-**2. How many movies and shows fall in each decade in Netflix's library?**
-
+## 2. How many movies and shows fall in each decade in Netflix's library?
 ```mysql
 SELECT CONCAT(FLOOR(release_year / 10) * 10, 's') AS decade,
 	COUNT(*) AS movies_shows_count
@@ -95,8 +93,7 @@ The results of the SQL query provide a fascinating insight into the distribution
 
 Even though the 2020s are still in progress, the dataset reveals an impressive count of 1,972 movies and shows, indicating a strong focus on acquiring and producing content from recent years. Overall, these findings shed light on Netflix's strategy of curating library that covers a wide range of decades. The significant increase in content availability from the 2000s onwards suggests a concerted effort to offer a diverse selection of titles. This collection spanning multiple decades allows Netflix's audience to explore a variety of movies and shows that reflect different eras. 
 
-**3. How did age-certifications impact the dataset?**
-
+## 3. How did age-certifications impact the dataset?
 ```mysql
 SELECT DISTINCT age_certification, 
 ROUND(AVG(imdb_score),2) AS avg_imdb_score,
